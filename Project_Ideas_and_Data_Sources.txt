@@ -1,11 +1,12 @@
 Project Ideas
-1.	NC Housing Market Costs (Data source is Zillow)
+1.	NC Housing Market Costs
       o	Which counties are the most or least expensive to live in NC?  
       o	Which counties are experiencing the largest housing growth (sales)?  
-2.	COVID-19 Interactive Dashboard (NC Department of Health and Human Services  
+2.	NC COVID-19 Interactive Dashboard and Map  
       o	What are the confirmed cases and total number of deaths from COVID-19 in NC? 
       o	How does cases and mortality compare across counties? 
 
 
 Data Sources
-
+1.    Zillow
+2.    NC Department of Health and Human Services and Johns Hopkins COVID-19 Resource Center
