@@ -1,12 +1,39 @@
-Project Title:
+Project Title: Pandemic Analysis
 
 Team Members:
 Guillermo Huertas, John Cost, Michael Cary, Henry Randall
 
-Project Description/Outline:
+Project Description/Outline: 
+Identify trends in the spread of Covid-19 and how demographics played a role in the spread of the pandemic. Analyze how differnet counties are responding to the pamdemic, and what factors affect it.
 
-Research Question to Answer:
+Research Question to Answer: 
+1) Is there a coorelation between median household income and the spread of COVID-19?
+2) Is there a difference in the spread and death toll between urban and rural areas?
+3) Does hospital quality affect the death toll of COVID-19 patients?
 
-Dataset to Be Used:
+Dataset to Be Used: 
+1) Johns Hopkins COVID-19 github repo - https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv
+2) US Census bureau data
+3) Hospital Compare https://www.medicare.gov/hospitalcompare/search.html
 
 Rough Breakdown of Tasks:
+Created the slack channel for the team (Henry)
+Create the project on GitHub (Henry)
+Identifying the datasets and outline the project (All)
+Curate code in Jupyter notebook/repository master branch (Henry)
+Curate CSVs and Read in data (Henry)
+Question 1 Guillermo
+Question 2 John
+Quesiton 3 Michael
+  Clean data and Merge DataFrames
+  Analyze data – generate descriptive statistics  
+  Visualization using Matplotlib (6-8 charts)
+
+Write-up summarizing findings
+  Summary Henry
+  Analysis of each question (Guillermo-1, John-2, Michael-3)
+Development of presentation slides
+  Summary Henry
+  Analysis of each question (Guillermo-1, John-2, Michael-3)
+Submit project
+Present project on Saturday, April 18
