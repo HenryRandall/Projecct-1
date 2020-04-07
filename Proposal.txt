@@ -1,7 +1,7 @@
 Project Title: Pandemic Analysis
 
 Team Members:
-Guillermo Huertas, John Cost, Michael Cary, Henry Randall
+Guillermo Huertas, John Costa, Michael Cary, Henry Randall
 
 Project Description/Outline: 
 Identify trends in the spread of Covid-19 and how demographics played a role in the spread of the pandemic. Analyze how differnet counties are responding to the pamdemic, and what factors affect it.
