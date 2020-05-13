@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 
 # Dependencies and Setup
@@ -21,7 +21,7 @@ import json
 from ipywidgets.embed import embed_minimal_html
 
 
-# In[2]:
+# In[5]:
 
 
 # Make Directories
@@ -47,7 +47,7 @@ except:
     pass
 
 
-# In[3]:
+# In[6]:
 
 
 # Call Cencus Data
@@ -69,7 +69,7 @@ census_df['Poverty Rate'] = 100 *     census_df['Poverty Count'].astype(
         int) / census_df['Population'].astype(int)
 
 
-# In[4]:
+# In[7]:
 
 
 # Clean Census Data - Remove Territories
@@ -93,7 +93,7 @@ merge_df['Population Density']=merge_df['Population Density'].astype(float)
 census_df=merge_df[['FIPS','Population','Population Density','Median Household Income','Poverty Rate']]
 
 
-# In[5]:
+# In[8]:
 
 
 # Read in Medicare.gov hospital compare url: https://data.medicare.gov/resource/xubh-q36u.json
@@ -110,7 +110,7 @@ hospitals_df=hospitals_df.drop(columns='index')
 hospitals_df['hospital_overall_rating'] = hospitals_df['hospital_overall_rating'].astype(float)
 
 
-# In[6]:
+# In[27]:
 
 
 # Define Urls for the Johns Hopkins Data
@@ -121,8 +121,17 @@ death_url='https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse
 confirm_df=pd.read_csv(confirm_url, error_bad_lines=False)
 death_df=pd.read_csv(death_url, error_bad_lines=False)
 
+# Pull State Data
+state_confirms=confirm_df.groupby('Province_State').sum()
+state_confirms=state_confirms.drop(columns=['UID','code3','FIPS','Lat','Long_'])
+state_deaths=death_df.groupby('Province_State').sum()
+state_deaths=state_deaths.drop(columns=['UID','code3','FIPS','Lat','Long_'])
 
-# In[7]:
+state_confirms.to_csv('Output/Data/stateconfirms.csv',index=False,header=True)
+state_deaths.to_csv('Output/Data/statedeaths.csv',index=False,header=True)
+
+
+# In[28]:
 
 
 # Clean Confirm data Rows - Remove data for territories and cruise ships, format FIPS
@@ -139,6 +148,13 @@ death_df=death_df.dropna()
 death_df=death_df[~death_df['Admin2'].astype(str).str.startswith('Out of')]
 death_df=death_df[death_df.Admin2 != 'Out of*']
 death_df=death_df.reset_index()
+
+# Pull County data
+county_confirms=confirm_df.drop(columns=['UID','index','iso2','iso3','code3','FIPS','Lat','Long_'])
+county_deaths=death_df.drop(columns=['UID','index','iso2','iso3','code3','FIPS','Lat','Long_'])
+
+county_confirms.to_csv('Output/Data/countyconfirms.csv',index=False,header=True)
+county_deaths.to_csv('Output/Data/countydeaths.csv',index=False,header=True)
 
 
 # In[8]:
